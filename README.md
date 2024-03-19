@@ -1,4 +1,4 @@
-HappHour App Backend System Overview
+HappyHour App Backend System Overview
 
 1. Authentication and Authorization 
 
