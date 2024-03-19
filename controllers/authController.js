@@ -22,7 +22,7 @@ module.exports = {
                         disabled: false
                     })
 
-                    console.log(userResponse.uid);
+                    
 
                     const newUser = new User({
                         username: user.username,

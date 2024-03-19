@@ -6,6 +6,10 @@ const app = express()
 const port = 6002
 
 const authRouter = require('./routes/auth')
+const userRouter = require('./routes/user')
+const shopRouter = require('./routes/shop')
+const categoryRouter = require('./routes/category')
+const drinkRouter = require('./routes/drink')
 
 dotenv.config()
 
@@ -20,5 +24,11 @@ mongoose.connect(process.env.MONGO_URL).then(() => console.log('Db Connected')).
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', authRouter)
+app.use('/', authRouter);
+app.use('/api/users', userRouter);
+app.use('/api/shop', shopRouter);
+app.use('/api/category', categoryRouter);
+app.use('/api/drink', drinkRouter);
+
+
 app.listen(process.env.PORT || port, () => console.log(`Happyhour backend app listening on port ${process.env.PORT}!`))
